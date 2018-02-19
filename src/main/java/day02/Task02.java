@@ -1,5 +1,7 @@
 package day02;
 
+import utils.ArrayConverters;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -53,8 +55,7 @@ public class Task02 {
 
     private static int calculateLineDivision(String[] lineOfNumbers) {
         int result = 0;
-
-        int[] numbersToCheck = convertStringToInt(lineOfNumbers);
+        int[] numbersToCheck = ArrayConverters.convertStringToInt(lineOfNumbers);
 
         for (int number : numbersToCheck) {
             for (int compareNumber : numbersToCheck) {
@@ -67,12 +68,5 @@ public class Task02 {
         return result;
     }
 
-    private static int[] convertStringToInt(String[] input) {
-        int[] result = new int[input.length];
 
-        for (int i = 0; i < input.length; i++) {
-            result[i] = Integer.parseInt(input[i]);
-        }
-        return result;
-    }
 }

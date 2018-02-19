@@ -1,5 +1,7 @@
 package day02;
 
+import utils.ArrayConverters;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -55,15 +57,16 @@ public class Task01 {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
 
-        for (String number : lineOfNumbers) {
-            int numberToCalculate = Integer.parseInt(number);
+        int[] numbersToCheck = ArrayConverters.convertStringToInt(lineOfNumbers);
 
-            if (numberToCalculate > max) {
-                max = numberToCalculate;
+        for (int number : numbersToCheck) {
+
+            if (number > max) {
+                max = number;
             }
 
-            if (numberToCalculate < min) {
-                min = numberToCalculate;
+            if (number < min) {
+                min = number;
             }
         }
 
