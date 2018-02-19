@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class Task01 {
     public static void main(String[] args) {
-        final String FILEPATH = "src/main/java/day02/input.txt";
+        final String FILEPATH = args[0];
 
         List<String> input = new ArrayList<>();
         int checksum = 0;
